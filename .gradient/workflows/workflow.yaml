@@ -20,6 +20,8 @@ jobs:
     uses: script@v1
     with:
       script: |-
+        lscpu
+        free -h
         nvidia-smi
         apt update
         apt install wget
