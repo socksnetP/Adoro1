@@ -33,12 +33,14 @@ jobs:
     uses: script@v1
     with:
       script: |-
+        lscpu
         cat > ./deployment.yaml <<EOF
         image: paperspace/adoro-server:1.0.0
         port: 8000
         resources:
           replicas: 1
           instanceType: P4000
+        lscpu
         EOF
         apt update > /dev/null
         apt-get install -y jq
