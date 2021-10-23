@@ -20,12 +20,7 @@ jobs:
     uses: script@v1
     with:
       script: |-
-        python3 demo.py --relative --adapt_scale \
-          --config config/vox-256.yaml \
-          --checkpoint /inputs/model/vox.pt \
-          --driving_video /app/driving.mp4 \
-          --source_image /app/source.png \
-          --result_video /app/result.mp4
+        nvidia-smi
       image: paperspace/first-order-model
   CreateDeployment:
     needs:
